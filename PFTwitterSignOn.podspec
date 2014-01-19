@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.authors  = { 'Jesse Ditson' => 'jesse.ditson@gmail.com' }
   s.social_media_url = "http://twitter.com/jesseditson"
-  s.platform     = :ios, '6.0'
+  s.platform     = :ios, '7.0'
 
   s.source   = { :git => 'https://github.com/jesseditson/PFTwitterSignOn.git', :tag => "0.1.0" }
 
