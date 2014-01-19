@@ -9,7 +9,7 @@
 #import "PFAppDelegate.h"
 #import <AFOAuth1Client/AFOAuth1Client.h>
 #import "PFTwitterAccountSelectDialog.h"
-#import "PFTwitterSignOn.h"
+#import <PFTwitterSignOn/PFTwitterSignOn.h>
 
 @interface PFAppDelegate()
 {
