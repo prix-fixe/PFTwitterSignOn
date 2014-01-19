@@ -44,7 +44,7 @@ See the example project for a full implementation. Here's the basics:
 
 **Requesting Access**
 
-PFTwitterSignOn has 2 methos for requesting a user's twitter account. The first allows you to pass a view, and shows a standard action sheet to ask the user to select an account. If the user only has one account, both methods are identical in user experience.
+PFTwitterSignOn has 2 methods for requesting a user's twitter account. The first allows you to pass a view, and shows a standard action sheet to ask the user to select an account. If the user only has one account, both methods are identical in user experience.
 
 The first is:
 
