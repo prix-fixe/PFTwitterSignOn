@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "Single Sign On for Twitter on iOS."
 
   s.homepage = 'https://github.com/jesseditson/PFTwitterSignOn'
-  s.license      = 'MIT'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors  = { 'Jesse Ditson' => 'jesse.ditson@gmail.com' }
   s.social_media_url = "http://twitter.com/jesseditson"
   s.platform     = :ios, '7.0'
