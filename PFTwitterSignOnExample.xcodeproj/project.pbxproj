@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7728966A8144426792340AA1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCB770DAF4D4A86BC10BC9E /* libPods.a */; };
 		F3B97AF8188B30D0006439CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B97AF7188B30D0006439CD /* Foundation.framework */; };
 		F3B97AFA188B30D0006439CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B97AF9188B30D0006439CD /* CoreGraphics.framework */; };
 		F3B97AFC188B30D0006439CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B97AFB188B30D0006439CD /* UIKit.framework */; };
@@ -19,6 +20,8 @@
 		F3B97B13188B30D0006439CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B97AFB188B30D0006439CD /* UIKit.framework */; };
 		F3B97B1B188B30D0006439CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3B97B19188B30D0006439CD /* InfoPlist.strings */; };
 		F3B97B1D188B30D0006439CD /* PFTwitterSignOnExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B97B1C188B30D0006439CD /* PFTwitterSignOnExampleTests.m */; };
+		F3B97B29188B3364006439CD /* PFTwitterSignOn.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B97B28188B3364006439CD /* PFTwitterSignOn.m */; };
+		F3B97B2C188B3ECE006439CD /* PFTwitterAccountSelectDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B97B2B188B3ECE006439CD /* PFTwitterAccountSelectDialog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AD609120B874B5CB177D3A1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		ACCB770DAF4D4A86BC10BC9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B97AF4188B30D0006439CD /* PFTwitterSignOnExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PFTwitterSignOnExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B97AF7188B30D0006439CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F3B97AF9188B30D0006439CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +53,10 @@
 		F3B97B18188B30D0006439CD /* PFTwitterSignOnExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PFTwitterSignOnExampleTests-Info.plist"; sourceTree = "<group>"; };
 		F3B97B1A188B30D0006439CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F3B97B1C188B30D0006439CD /* PFTwitterSignOnExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTwitterSignOnExampleTests.m; sourceTree = "<group>"; };
+		F3B97B27188B3364006439CD /* PFTwitterSignOn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTwitterSignOn.h; path = PFTwitterSignOn/PFTwitterSignOn.h; sourceTree = "<group>"; };
+		F3B97B28188B3364006439CD /* PFTwitterSignOn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTwitterSignOn.m; path = PFTwitterSignOn/PFTwitterSignOn.m; sourceTree = "<group>"; };
+		F3B97B2A188B3ECE006439CD /* PFTwitterAccountSelectDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTwitterAccountSelectDialog.h; path = PFTwitterSignOn/PFTwitterAccountSelectDialog.h; sourceTree = "<group>"; };
+		F3B97B2B188B3ECE006439CD /* PFTwitterAccountSelectDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTwitterAccountSelectDialog.m; path = PFTwitterSignOn/PFTwitterAccountSelectDialog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 				F3B97AFA188B30D0006439CD /* CoreGraphics.framework in Frameworks */,
 				F3B97AFC188B30D0006439CD /* UIKit.framework in Frameworks */,
 				F3B97AF8188B30D0006439CD /* Foundation.framework in Frameworks */,
+				7728966A8144426792340AA1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +87,12 @@
 		F3B97AEB188B30D0006439CD = {
 			isa = PBXGroup;
 			children = (
+				F3B97B26188B3356006439CD /* PFTwitterSignOn */,
 				F3B97AFD188B30D0006439CD /* PFTwitterSignOnExample */,
 				F3B97B16188B30D0006439CD /* PFTwitterSignOnExampleTests */,
 				F3B97AF6188B30D0006439CD /* Frameworks */,
 				F3B97AF5188B30D0006439CD /* Products */,
+				3AD609120B874B5CB177D3A1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +112,7 @@
 				F3B97AF9188B30D0006439CD /* CoreGraphics.framework */,
 				F3B97AFB188B30D0006439CD /* UIKit.framework */,
 				F3B97B10188B30D0006439CD /* XCTest.framework */,
+				ACCB770DAF4D4A86BC10BC9E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,6 +157,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F3B97B26188B3356006439CD /* PFTwitterSignOn */ = {
+			isa = PBXGroup;
+			children = (
+				F3B97B27188B3364006439CD /* PFTwitterSignOn.h */,
+				F3B97B28188B3364006439CD /* PFTwitterSignOn.m */,
+				F3B97B2A188B3ECE006439CD /* PFTwitterAccountSelectDialog.h */,
+				F3B97B2B188B3ECE006439CD /* PFTwitterAccountSelectDialog.m */,
+			);
+			name = PFTwitterSignOn;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3B97B20188B30D0006439CD /* Build configuration list for PBXNativeTarget "PFTwitterSignOnExample" */;
 			buildPhases = (
+				FD479D5906444308AB00F733 /* Check Pods Manifest.lock */,
 				F3B97AF0188B30D0006439CD /* Sources */,
 				F3B97AF1188B30D0006439CD /* Frameworks */,
 				F3B97AF2188B30D0006439CD /* Resources */,
+				BCE80195CC904BA39B7435FE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,13 +261,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BCE80195CC904BA39B7435FE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD479D5906444308AB00F733 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F3B97AF0188B30D0006439CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B97B29188B3364006439CD /* PFTwitterSignOn.m in Sources */,
 				F3B97B08188B30D0006439CD /* PFAppDelegate.m in Sources */,
 				F3B97B04188B30D0006439CD /* main.m in Sources */,
+				F3B97B2C188B3ECE006439CD /* PFTwitterAccountSelectDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +420,7 @@
 		};
 		F3B97B21188B30D0006439CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD609120B874B5CB177D3A1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -372,6 +434,7 @@
 		};
 		F3B97B22188B30D0006439CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD609120B874B5CB177D3A1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -444,6 +507,7 @@
 				F3B97B22188B30D0006439CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F3B97B23188B30D0006439CD /* Build configuration list for PBXNativeTarget "PFTwitterSignOnExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +516,7 @@
 				F3B97B25188B30D0006439CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
