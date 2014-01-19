@@ -22,23 +22,25 @@ See the example project for a full implementation. Here's the basics:
 ![Custom URL Scheme](README_resources/URLSchemes.png)
 
 - import `<AFOAuth1Client/AFOAuth1Client.h>` to your app delegate header, and the following method (or add the notification to the existing method)
-
+```
     - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
     {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:@{kAFApplicationLaunchOptionsURLKey: url}]];
     
         return YES;
     }
-
+```
 - before requesting access with this library, set your consumer key and secret using the following method:
-
+```
     [PFTwitterSignOn setCredentialsWithConsumerKey:@"<your_consumer_key>" andSecret:@"<your_consumer_secret>"];
-
+```
 - PFTwitterSignOn dispatches notifications to let you know when you should display a loading dialog. You can listen to the 2 notifications on whatever controller will be doing the authentication:
 
+```
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLoadingWithNotification:) name:PF_TWITTER_SIGN_ON_LOADING_STARTED_NOTIFICATION object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLoadingWithNotification:) name:PF_TWITTER_SIGN_ON_LOADING_ENDED_NOTIFICATION object:nil];
-
+```
 
 **Requesting Access**
 
