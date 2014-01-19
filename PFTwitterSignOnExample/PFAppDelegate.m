@@ -69,10 +69,10 @@
     NSString *title;
     if (error) {
         title = @"Error Signing In";
-        message = [NSString stringWithFormat:@"Error message : %@",[error localizedDescription]];
+        message = [NSString stringWithFormat:@"Error message:\n%@",[error localizedDescription]];
     } else {
         title = @"Successfully Signed In";
-        message = [NSString stringWithFormat:@"Account info: \n%@",[accountInfo description]];
+        message = [NSString stringWithFormat:@"Account info:\n%@",[accountInfo description]];
     }
     [self showMessage:message withTitle:title];
 }

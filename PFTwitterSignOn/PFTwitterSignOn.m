@@ -106,32 +106,40 @@ static PFTwitterSignOn *__sharedInstance;
         [[NSNotificationCenter defaultCenter] postNotificationName:PF_TWITTER_SIGN_ON_LOADING_STARTED_NOTIFICATION object:nil userInfo:@{@"action" : @"fetchCredentials"}];
     });
     [twitterClient requestTokensForAccount:account withHandler:^(NSString *oAuthAccessToken, NSString *oAuthTokenSecret, NSError *error){
-        SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:kUserInfoURL] parameters:kUserInfoParams];
-        [request setAccount:account];
-        [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error){
+        if (!oAuthAccessToken || !oAuthTokenSecret) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSNotificationCenter defaultCenter] postNotificationName:PF_TWITTER_SIGN_ON_LOADING_ENDED_NOTIFICATION object:nil userInfo:@{@"action" : @"fetchCredentials"}];
-                if (responseData) {
-                    if (urlResponse.statusCode >= 200 && urlResponse.statusCode < 300) {
-                        NSError *jsonError;
-                        NSMutableDictionary *userData = [[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&jsonError] mutableCopy];
-                        if (userData) {
-                            [userData setObject:oAuthAccessToken forKey:@"accessToken"];
-                            [userData setObject:oAuthTokenSecret forKey:@"tokenSecret"];
-                            callback(userData,error);
+                NSError *error = [NSError errorWithDomain:@"com.prixfixe.PFTwitterSignOn" code:500 userInfo:@{NSLocalizedDescriptionKey : @"Invalid key or secret - unable to retrieve user access token & secret."}];
+                callback(nil,error);
+            });
+        } else {
+            SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:[NSURL URLWithString:kUserInfoURL] parameters:kUserInfoParams];
+            [request setAccount:account];
+            [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:PF_TWITTER_SIGN_ON_LOADING_ENDED_NOTIFICATION object:nil userInfo:@{@"action" : @"fetchCredentials"}];
+                    if (responseData) {
+                        if (urlResponse.statusCode >= 200 && urlResponse.statusCode < 300) {
+                            NSError *jsonError;
+                            NSMutableDictionary *userData = [[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments error:&jsonError] mutableCopy];
+                            if (userData) {
+                                [userData setObject:oAuthAccessToken forKey:@"accessToken"];
+                                [userData setObject:oAuthTokenSecret forKey:@"tokenSecret"];
+                                callback(userData,error);
+                            } else {
+                                // Our JSON deserialization went awry
+                                callback(nil, jsonError);
+                            }
                         } else {
-                            // Our JSON deserialization went awry
-                            callback(nil, jsonError);
+                            // The server did not respond ... were we rate-limited?
+                            callback(nil, error);
                         }
                     } else {
-                        // The server did not respond ... were we rate-limited?
                         callback(nil, error);
                     }
-                } else {
-                    callback(nil, error);
-                }
-            });
-        }];
+                });
+            }];
+        }
     }];
 }
 
