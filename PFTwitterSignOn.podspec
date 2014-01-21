@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PFTwitterSignOn"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Single Sign On for Twitter on iOS."
 
   s.homepage = 'https://github.com/jesseditson/PFTwitterSignOn'
