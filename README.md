@@ -21,6 +21,10 @@ See the example project for a full implementation. Here's the basics:
 
 ![Custom URL Scheme](README_resources/URLSchemes.png)
 
+- go to [http://dev.twitter.com](dev.twitter.com), and register an app if you haven't already. You'll need your consumer key and secret in a bit, but in the meanwhile make sure you have at least a dummy callback URL (doesn't do anything, but needs to be set), and have enabled SSO:
+
+![Twitter Settings](README_resources/TwitterSettings.png)
+
 - import `<AFOAuth1Client/AFOAuth1Client.h>` to your app delegate header, and the following method (or add the notification to the existing method)
 ```
     - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

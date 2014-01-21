@@ -26,7 +26,9 @@
 
 - (void)setupTwitterSignOn
 {
-    [PFTwitterSignOn setCredentialsWithConsumerKey:@"<your_consumer_key>" andSecret:@"<your_consumer_secret>"];
+    NSString *consumerKey = @"<your_consumer_key>";
+    NSString *consumerSecret = @"<your_consumer_secret>";
+    [PFTwitterSignOn setCredentialsWithConsumerKey:consumerKey andSecret:consumerSecret];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLoadingWithNotification:) name:PF_TWITTER_SIGN_ON_LOADING_STARTED_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLoadingWithNotification:) name:PF_TWITTER_SIGN_ON_LOADING_ENDED_NOTIFICATION object:nil];
 }
@@ -69,7 +71,7 @@
     NSString *title;
     if (error) {
         title = @"Error Signing In";
-        message = [NSString stringWithFormat:@"Error message:\n%@",[error localizedDescription]];
+        message = [NSString stringWithFormat:@"Error message:\n%@",[error localizedRecoverySuggestion] ? [error localizedRecoverySuggestion] : [error localizedDescription]];
     } else {
         title = @"Successfully Signed In";
         message = [NSString stringWithFormat:@"Account info:\n%@",[accountInfo description]];
